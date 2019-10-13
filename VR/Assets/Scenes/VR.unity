@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.48395687, g: 0.57566047, b: 0.68015915, a: 1}
+  m_IndirectSpecularColor: {r: 0.4840476, g: 0.57578605, b: 0.68021333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -395,6 +395,9 @@ MonoBehaviour:
   objectShakeDuration: 2
   objectShakeFrequency: 25
   maximumTranslationShake: {x: 0.5, y: 0.5, z: 0.5}
+  frequency1: 100
+  duration: 2
+  synchronize: 0
   shakeableObject: {fileID: 249049220}
   vrCamera: {fileID: 913863478}
 --- !u!4 &908846373
