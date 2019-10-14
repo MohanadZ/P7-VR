@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.48397273, g: 0.5757095, b: 0.68018854, a: 1}
+  m_IndirectSpecularColor: {r: 0.48396945, g: 0.57574266, b: 0.68018854, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -547,8 +547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioFrequency: 100
   audioDuration: 2
+  synchronizeWithObject: 1
   synchronizeWithCamera: 0
-  synchronizeWithObject: 0
   shakeController: {fileID: 908846372}
 --- !u!4 &1889515749
 Transform:

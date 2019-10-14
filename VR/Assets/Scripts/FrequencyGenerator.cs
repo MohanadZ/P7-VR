@@ -7,8 +7,9 @@ public class FrequencyGenerator : MonoBehaviour
     [Range(1, 500)]
     [SerializeField] float audioFrequency = 100f;
     [SerializeField] float audioDuration = 2f;
+    [SerializeField] bool synchronizeWithObject = true;
     [SerializeField] bool synchronizeWithCamera = false;
-    [SerializeField] bool synchronizeWithObject = false;
+
 
 
 
