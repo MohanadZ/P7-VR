@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class FrequencyGenerator : MonoBehaviour
 {
-    [Range(1, 20000)]  //Creates a slider in the inspector
-    [SerializeField] float frequency1 = 100f;
-
-    [SerializeField] float duration = 2f;
-    [SerializeField] bool synchronize = false;
-
-    [SerializeField] Shaker cameraAndObjectShaker;
+    [Range(1, 500)]
+    [SerializeField] float audioFrequency = 100f;
+    [SerializeField] float audioDuration = 2f;
+    [SerializeField] bool synchronizeWithCamera = false;
+    [SerializeField] bool synchronizeWithObject = false;
 
 
 
     float sampleRate = 44100f;
     float waveLengthInSeconds = 2.0f;
-
     AudioSource audioSource;
     int timeIndex = 0;
+
+    [SerializeField] Shaker shakeController;
 
     void Start()
     {
@@ -27,21 +26,40 @@ public class FrequencyGenerator : MonoBehaviour
         audioSource.spatialBlend = 0; //force 2D sound
         audioSource.Stop(); //avoids audiosource from starting to play automatically
 
-        cameraAndObjectShaker.GetComponent<Shaker>();
+        shakeController.GetComponent<Shaker>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (synchronize)
-            {
-                StartCoroutine(GenerateAudio(duration));
-            }
-            else
-            {
-                StartCoroutine(GenerateAudio(duration));
-            }
+            PlayAudio();
+        }
+    }
+
+    private void PlayAudio()
+    {
+        if (synchronizeWithObject && synchronizeWithCamera)
+        {
+            synchronizeWithObject = false;
+            synchronizeWithCamera = false;
+            StartCoroutine(GenerateAudio(audioDuration));
+        }
+        else if (synchronizeWithCamera)
+        {
+            audioFrequency = shakeController.CameraShakeFrequency;
+            audioDuration = shakeController.CameraShakeDuration;
+            StartCoroutine(GenerateAudio(audioDuration));
+        }
+        else if (synchronizeWithObject)
+        {
+            audioFrequency = shakeController.ObjectShakeFrequency;
+            audioDuration = shakeController.ObjectShakeDuration;
+            StartCoroutine(GenerateAudio(audioDuration));
+        }
+        else
+        {
+            StartCoroutine(GenerateAudio(audioDuration));
         }
     }
 
@@ -55,24 +73,23 @@ public class FrequencyGenerator : MonoBehaviour
             {
                 timeIndex = 0;  //resets timer before playing sound
                 audioSource.Play();
-                Debug.Log("In If");
             }
 
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+
         audioSource.Stop();
-        Debug.Log(timeElapsed);
     }
 
     void OnAudioFilterRead(float[] data, int channels)
     {
         for (int i = 0; i < data.Length; i += channels)
         {
-            data[i] = CreateSine(timeIndex, frequency1, sampleRate);
+            data[i] = CreateSine(timeIndex, audioFrequency, sampleRate);
 
             if (channels == 2)
-                data[i + 1] = CreateSine(timeIndex, frequency1, sampleRate);
+                data[i + 1] = CreateSine(timeIndex, audioFrequency, sampleRate);
 
             timeIndex++;
 
