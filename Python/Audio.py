@@ -4,8 +4,10 @@ import numpy as np
 
 class AudioClass:
 
+    isPlaying = False
+
     @staticmethod
-    def playback(frequency, duration, playStop):
+    def playback(frequency, duration):
 
         p = pyaudio.PyAudio()
 
@@ -22,13 +24,13 @@ class AudioClass:
                         output=True)
 
         # play. May repeat with different volume values (if done interactively)
-        if(playStop == 1):
-            stream.write(volume*samples)
+        
+        AudioClass.isPlaying = True
+        stream.write((volume*samples).tobytes())
+        # stream.write(volume*samples)
 
         stream.stop_stream()
         stream.close()
-
+        
+        AudioClass.isPlaying = False
         p.terminate()
-
-# audio = AudioClass()
-# audio.playback(120, 30)

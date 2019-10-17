@@ -15,9 +15,6 @@ public class Client : MonoBehaviour
     {
         _requester = new Requester();
         _requester.Start();
-        _requester.frequency = 200;
-        _requester.duration = 30;
-        _requester.playAudio = 0;
     }
 
     void Update()
