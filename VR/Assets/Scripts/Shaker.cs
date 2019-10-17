@@ -78,9 +78,9 @@ public class Shaker : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            //vrCamera.ShakeCamera(cameraShakeDuration, maximumAngularShake.x, maximumAngularShake.y, maximumAngularShake.z, cameraShakeFrequency);
+            vrCamera.ShakeCamera(cameraShakeDuration, maximumAngularShake.x, maximumAngularShake.y, maximumAngularShake.z, cameraShakeFrequency);
 
-            shakeableObject.ShakeObject(objectShakeDuration, maximumTranslationShake.x, maximumTranslationShake.y, maximumTranslationShake.z, objectShakeFrequency);
+            //shakeableObject.ShakeObject(objectShakeDuration, maximumTranslationShake.x, maximumTranslationShake.y, maximumTranslationShake.z, objectShakeFrequency);
 
         }
     }
