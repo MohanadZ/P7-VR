@@ -14,6 +14,7 @@ public class Requester : RunAbleThread
 
     public float frequency;
     public float duration;
+    public float playAudio;
     // make public getter and setter for these two variables
 
     public static string[] errorFeedback;
@@ -31,7 +32,7 @@ public class Requester : RunAbleThread
                 if (Send)
                 {
                     // Send both frequency and duration together here and split them in Python afterwards.
-                    client.SendFrame(frequency.ToString());
+                    client.SendFrame(frequency.ToString() + "," + duration.ToString() + "," + playAudio.ToString());
 
                     string message = null;
                     bool gotMessage = false;

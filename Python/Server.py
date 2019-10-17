@@ -1,7 +1,10 @@
 import time
 import zmq
 
+from Audio import AudioClass
+
 class Connection:
+
     string_message = ""
 
     @staticmethod
@@ -10,14 +13,21 @@ class Connection:
         socket = context.socket(zmq.REP)
         socket.bind("tcp://*:5555")
 
+        audio = AudioClass
+
         messages = []
     
         while True:
             #  Wait for next request from client
             message = socket.recv()
             print("Received request: %s" % message)
-
             Connection.string_message = message.decode("utf-8")
+
+            freq,dur,play = Connection.string_message.split(",")
+
+            audio.playback(int(freq), int(dur), int(play))
+
+            
 
             messageToUnity = Connection.string_message
             messageToUnityEncoded = messageToUnity.encode()
