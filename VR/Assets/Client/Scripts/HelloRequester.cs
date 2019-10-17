@@ -13,6 +13,8 @@ public class HelloRequester : RunAbleThread
     ///     Stop requesting when Running=false.
 
     public float frequency;
+    public float duration;
+    // make public getter and setter for these two variables
 
     public static string[] errorFeedback;
 
@@ -28,7 +30,7 @@ public class HelloRequester : RunAbleThread
             {
                 if (Send)
                 {
-                    //string message = client.ReceiveFrameString();
+                    // Send both frequency and duration together here and split them in Python afterwards.
                     client.SendFrame(frequency.ToString());
 
                     string message = null;
@@ -41,7 +43,7 @@ public class HelloRequester : RunAbleThread
                     }
                     if (gotMessage)
                     {
-                        Debug.Log("Received " + message);
+                        //Debug.Log("Received " + message);
                     }
                 }       
             }

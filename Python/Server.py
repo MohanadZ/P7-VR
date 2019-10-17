@@ -2,7 +2,7 @@ import time
 import zmq
 
 class Connection:
-    string_message = "FROM PYTHON TO UNITY"
+    string_message = ""
 
     @staticmethod
     def server():
@@ -19,10 +19,8 @@ class Connection:
 
             Connection.string_message = message.decode("utf-8")
 
-            
-            
-            error_feedback = Connection.string_message
-            feedbackToUnity = error_feedback.encode()
+            messageToUnity = Connection.string_message
+            messageToUnityEncoded = messageToUnity.encode()
 
             #  In the real world usage, you just need to replace time.sleep() with
             #  whatever work you want python to do.-
@@ -31,7 +29,7 @@ class Connection:
 
             #  Send reply back to client
             #  In the real world usage, after you finish your work, send your output here
-            socket.send(feedbackToUnity)
+            socket.send(messageToUnityEncoded)
 
 
 # Instantiate Connection class and call server-function.
