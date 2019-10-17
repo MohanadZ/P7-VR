@@ -6,33 +6,33 @@ using NetMQ;
 using NetMQ.Sockets;
 using TMPro;
 
-public class HelloClient : MonoBehaviour
+public class Client : MonoBehaviour
 {
-    private HelloRequester _helloRequester;
+    private Requester _requester;
     public bool SendPack = true;
 
     private void Start()
     {
-        _helloRequester = new HelloRequester();
-        _helloRequester.Start();
-        _helloRequester.frequency = 200;
+        _requester = new Requester();
+        _requester.Start();
+        _requester.frequency = 200;
     }
 
     void Update()
     {
         if (SendPack)
         {
-            _helloRequester.Continue();
+            _requester.Continue();
         }
         else if (!SendPack)
         {
-            _helloRequester.Pause();
+            _requester.Pause();
         }
     }
 
 
     private void OnDestroy()
     {
-        _helloRequester.Stop();
+        _requester.Stop();
     }
 }

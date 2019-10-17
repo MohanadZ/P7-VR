@@ -8,7 +8,7 @@ using UnityEngine;
 ///     To use this class, you just instantiate, call Start() when you want to start and Stop() when you want to stop.
 
 
-public class HelloRequester : RunAbleThread
+public class Requester : RunAbleThread
 {
     ///     Stop requesting when Running=false.
 
