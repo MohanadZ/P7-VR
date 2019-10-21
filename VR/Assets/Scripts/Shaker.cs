@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Shaker : MonoBehaviour
 {
+    [Header("Server Settings")]
+    [SerializeField] float serverDelay = 0.3f;
+
     [Header("Camera Shake Settings")]
     [SerializeField] float cameraShakeDuration = 2f;
     [SerializeField] float cameraShakeFrequency = 25f;
@@ -78,9 +81,9 @@ public class Shaker : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            vrCamera.ShakeCamera(cameraShakeDuration, maximumAngularShake.x, maximumAngularShake.y, maximumAngularShake.z, cameraShakeFrequency);
+            vrCamera.ShakeCamera(cameraShakeDuration, serverDelay, maximumAngularShake.x, maximumAngularShake.y, maximumAngularShake.z, cameraShakeFrequency);
 
-            //shakeableObject.ShakeObject(objectShakeDuration, maximumTranslationShake.x, maximumTranslationShake.y, maximumTranslationShake.z, objectShakeFrequency);
+            shakeableObject.ShakeObject(objectShakeDuration, serverDelay, maximumTranslationShake.x, maximumTranslationShake.y, maximumTranslationShake.z, objectShakeFrequency);
 
         }
     }

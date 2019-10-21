@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.48393333, g: 0.5756886, b: 0.68014264, a: 1}
+  m_IndirectSpecularColor: {r: 0.4839936, g: 0.5756872, b: 0.68018353, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -298,7 +298,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.33e-43, y: 5.9996886e-13, z: 7.33e-43, w: 6e-45}
+  m_BoundingSphereOverride: {x: 0, y: 1e-44, z: 1e-45, w: -6.552172e-25}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de2fdf85c517a6458f436f6b429745e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serverDelay: 0.3
   cameraShakeDuration: 4
   cameraShakeFrequency: 120
   maximumAngularShake: {x: 2, y: 2, z: 2}
@@ -524,8 +525,8 @@ MonoBehaviour:
   SendPack: 1
   audioFrequency: 100
   audioDuration: 2
-  synchronizeWithObject: 0
-  synchronizeWithCamera: 1
+  synchronizeWithObject: 1
+  synchronizeWithCamera: 0
   shakeController: {fileID: 908846372}
 --- !u!4 &1889515749
 Transform:
@@ -556,7 +557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1962527402
 Transform:
   m_ObjectHideFlags: 0

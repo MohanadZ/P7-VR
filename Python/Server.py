@@ -1,6 +1,6 @@
 import time
 import zmq
-
+import timeit
 from Audio import AudioClass
 
 class Connection:
@@ -18,9 +18,10 @@ class Connection:
         # messages = []
     
         while True:
+
             #  Wait for next request from client
             message = socket.recv()
-            print("Received request: %s" % message + str(audio.isPlaying))
+            # print("Received request: %s" % message + str(audio.isPlaying))
             Connection.string_message = message.decode("utf-8")
 
             freq,dur,play = Connection.string_message.split(",")
