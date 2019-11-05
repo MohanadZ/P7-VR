@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4839722, g: 0.57574224, b: 0.6801833, a: 1}
+  m_IndirectSpecularColor: {r: 0.48396176, g: 0.5757143, b: 0.6802169, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -96,7 +96,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f042159dbcf41e347811ad981853e8a3,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -127,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 205643031, guid: 054c9036058114349a36ac16ca3f5160, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 385934739}
     - target: {fileID: 3480386567915720300, guid: 054c9036058114349a36ac16ca3f5160,
         type: 3}
       propertyPath: m_Name
@@ -187,10 +192,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 205643031, guid: 054c9036058114349a36ac16ca3f5160, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 385934739}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 054c9036058114349a36ac16ca3f5160, type: 3}
 --- !u!114 &385934738 stripped
