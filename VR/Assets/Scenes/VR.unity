@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Avatar
       objectReference: {fileID: 0}
+    - target: {fileID: 3480386567915720300, guid: 054c9036058114349a36ac16ca3f5160,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 205643031, guid: 054c9036058114349a36ac16ca3f5160, type: 3}
       propertyPath: camera
       value: 
@@ -191,6 +196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480386567905151120, guid: 054c9036058114349a36ac16ca3f5160,
+        type: 3}
+      propertyPath: m_FirstSelected
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 054c9036058114349a36ac16ca3f5160, type: 3}
@@ -938,7 +948,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088990681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -62.8}
   m_LocalScale: {x: 0.28754, y: 0.28754, z: 0.28754}
   m_Children:
   - {fileID: 410540563}
@@ -971,7 +981,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.19657834, g: 1, b: 0.13679248, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1132,7 +1142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1274722067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,7 +1212,7 @@ RectTransform:
   m_GameObject: {fileID: 1274722066}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13784, y: 0.13784, z: 0.13784}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1088990682}
   - {fileID: 1085377952}
@@ -1442,14 +1452,14 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: b90e9ad2003f18c4486e909c4cbc143b, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -3050648489253531125, guid: b90e9ad2003f18c4486e909c4cbc143b, type: 2}
     value: {fileID: 0}
-  - key: {fileID: 4697742606019564929, guid: b90e9ad2003f18c4486e909c4cbc143b, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 908846374}
   - key: {fileID: -4524511305765050426, guid: b90e9ad2003f18c4486e909c4cbc143b, type: 2}
     value: {fileID: 2097017949}
