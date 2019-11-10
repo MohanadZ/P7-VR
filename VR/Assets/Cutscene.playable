@@ -285,8 +285,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Plane Turbulance Hard Plane, Cabin, Turbulance, Seats Shake, Hard
-      1-[AudioTrimmer.com]
+    m_DisplayName: Plane Turbulence
   m_Markers:
     m_Objects: []
   m_TrackProperties:
