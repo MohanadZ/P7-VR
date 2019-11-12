@@ -8,9 +8,9 @@ public class FrequencyGeneratorClient : MonoBehaviour
     public bool SendPack = true;
 
     [Range(1, 500)]
-    [SerializeField] float audioFrequency = 100f;
-    [SerializeField] float audioDuration = 2f;
-    [SerializeField] bool synchronizeWithObject = true;
+    [SerializeField] float audioFrequency = 75f;
+    [SerializeField] float audioDuration = 12f;
+    [SerializeField] bool synchronizeWithObject = false;
     [SerializeField] bool synchronizeWithCamera = false;
 
     //float sampleRate = 44100f;
@@ -35,11 +35,11 @@ public class FrequencyGeneratorClient : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            SetAudioValues();
-            StartCoroutine(StopPlayback(audioDuration));
-        }
+        //if (Input.GetKeyDown(KeyCode.Mouse0))
+        //{
+        //    SetAudioValues();
+        //    StartCoroutine(StopPlayback(audioDuration));
+        //}
 
         if (SendPack)
         {
@@ -102,6 +102,25 @@ public class FrequencyGeneratorClient : MonoBehaviour
         Debug.Log("Done");
         _requester.requesterPlayAudio = 0;
  
+    }
+
+    public void StartInitalVibration()
+    {
+        _requester.requesterfrequency = audioFrequency;
+        _requester.requesterDuration = audioDuration;
+        _requester.requesterPlayAudio = 1;
+        StartCoroutine(StopPlayback(audioDuration));
+    }
+
+    public void FirstTurbulence()
+    {
+        shakeController.CameraShakeDuration = 2f;
+        shakeController.CameraShakeFrequency = 30f;
+        _requester.requesterDuration = shakeController.CameraShakeDuration;
+        _requester.requesterfrequency = shakeController.CameraShakeFrequency;
+        shakeController.ShakeCamera();
+        _requester.requesterPlayAudio = 1;
+        StartCoroutine(StopPlayback(shakeController.CameraShakeDuration));
     }
 
     //IEnumerator PlayAudio(float duration)

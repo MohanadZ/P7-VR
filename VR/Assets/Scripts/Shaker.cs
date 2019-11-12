@@ -73,7 +73,7 @@ public class Shaker : MonoBehaviour
     void Start()
     {
         shakeableObject.GetComponent<ObjectShaker>();
-        //vrCamera.GetComponent<CameraShaker>();
+        vrCamera.GetComponent<CameraShaker>();
     }
 
     // Update is called once per frame
@@ -88,8 +88,9 @@ public class Shaker : MonoBehaviour
         }
     }
 
-    public void TestShake()
+    public void ShakeCamera()
     {
-        shakeableObject.ShakeObject(objectShakeDuration, serverDelay, maximumTranslationShake.x, maximumTranslationShake.y, maximumTranslationShake.z, objectShakeFrequency);
+        vrCamera.ShakeCamera(cameraShakeDuration, serverDelay, maximumAngularShake.x, 
+            maximumAngularShake.y, maximumAngularShake.z, cameraShakeFrequency);
     }
 }
