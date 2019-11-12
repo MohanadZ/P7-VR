@@ -469,6 +469,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &779647049 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3480386567916626242, guid: 054c9036058114349a36ac16ca3f5160,
+    type: 3}
+  m_PrefabInstance: {fileID: 385934737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &889054573
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +577,6 @@ GameObject:
   m_Component:
   - component: {fileID: 908846373}
   - component: {fileID: 908846372}
-  - component: {fileID: 908846374}
   m_Layer: 0
   m_Name: Shaker
   m_TagString: Untagged
@@ -614,35 +619,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &908846374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908846371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 0}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 908846371}
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1038530474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +995,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1889515748}
+        m_MethodName: StartInitalVibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1088990684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1217,7 +1204,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 385934739}
+  m_Camera: {fileID: 779647049}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1416,8 +1403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SendPack: 1
-  audioFrequency: 100
-  audioDuration: 2
+  audioFrequency: 75
+  audioDuration: 12
   synchronizeWithObject: 1
   synchronizeWithCamera: 0
   shakeController: {fileID: 908846372}
@@ -1484,7 +1471,7 @@ PlayableDirector:
   - key: {fileID: -3050648489253531125, guid: b90e9ad2003f18c4486e909c4cbc143b, type: 2}
     value: {fileID: 0}
   - key: {fileID: 0}
-    value: {fileID: 908846374}
+    value: {fileID: 0}
   - key: {fileID: -4524511305765050426, guid: b90e9ad2003f18c4486e909c4cbc143b, type: 2}
     value: {fileID: 2097017949}
   m_ExposedReferences:
@@ -1521,8 +1508,8 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 908846372}
-          m_MethodName: TestShake
+        - m_Target: {fileID: 1889515748}
+          m_MethodName: FirstTurbulence
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
