@@ -93,4 +93,10 @@ public class Shaker : MonoBehaviour
         vrCamera.ShakeCamera(cameraShakeDuration, serverDelay, maximumAngularShake.x, 
             maximumAngularShake.y, maximumAngularShake.z, cameraShakeFrequency);
     }
+
+    public void ShakeObject()
+    {
+        shakeableObject.ShakeObject(ObjectShakeDuration, serverDelay, maximumAngularShake.x,
+            maximumAngularShake.y, maximumAngularShake.z, objectShakeFrequency);
+    }
 }

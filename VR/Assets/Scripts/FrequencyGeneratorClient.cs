@@ -19,6 +19,7 @@ public class FrequencyGeneratorClient : MonoBehaviour
     //int timeIndex = 0;
 
     [SerializeField] Shaker shakeController;
+    [SerializeField] AudioController audioController;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class FrequencyGeneratorClient : MonoBehaviour
         //audioSource.Stop(); //avoids audiosource from starting to play automatically
 
         shakeController.GetComponent<Shaker>();
+        audioController.GetComponent<AudioController>();
     }
 
     void Update()
@@ -112,15 +114,87 @@ public class FrequencyGeneratorClient : MonoBehaviour
         StartCoroutine(StopPlayback(audioDuration));
     }
 
-    public void FirstTurbulence()
+    public void ReduceToBaseTurbulence()
+    {
+        audioController.ChangeVolume(0.2f);
+        audioFrequency = 40f;
+        audioDuration = 1f;
+        _requester.requesterfrequency = audioFrequency;
+        _requester.requesterDuration = audioDuration;
+        _requester.requesterPlayAudio = 1;
+        StartCoroutine(StopPlayback(audioDuration));
+    }
+
+    public void FirstCameraShake()
     {
         shakeController.CameraShakeDuration = 2f;
         shakeController.CameraShakeFrequency = 30f;
         _requester.requesterDuration = shakeController.CameraShakeDuration;
         _requester.requesterfrequency = shakeController.CameraShakeFrequency;
         shakeController.ShakeCamera();
+        audioController.ChangeVolume(0.5f);
         _requester.requesterPlayAudio = 1;
         StartCoroutine(StopPlayback(shakeController.CameraShakeDuration));
+    }
+
+    public void SecondCameraShake()
+    {
+        shakeController.CameraShakeDuration = 2f;
+        shakeController.CameraShakeFrequency = 30f;
+        _requester.requesterDuration = shakeController.CameraShakeDuration;
+        _requester.requesterfrequency = shakeController.CameraShakeFrequency;
+        shakeController.ShakeCamera();
+        audioController.ChangeVolume(0.5f);
+        _requester.requesterPlayAudio = 1;
+        StartCoroutine(StopPlayback(shakeController.CameraShakeDuration));
+    }
+
+    public void ThirdCameraShake()
+    {
+        shakeController.CameraShakeDuration = 2f;
+        shakeController.CameraShakeFrequency = 30f;
+        _requester.requesterDuration = shakeController.CameraShakeDuration;
+        _requester.requesterfrequency = shakeController.CameraShakeFrequency;
+        shakeController.ShakeCamera();
+        audioController.ChangeVolume(0.5f);
+        _requester.requesterPlayAudio = 1;
+        StartCoroutine(StopPlayback(shakeController.CameraShakeDuration));
+    }
+
+    public void FirstObjectShake()
+    {
+        shakeController.ObjectShakeDuration = 2f;
+        shakeController.ObjectShakeFrequency = 30f;
+        _requester.requesterDuration = shakeController.ObjectShakeDuration;
+        _requester.requesterfrequency = shakeController.ObjectShakeFrequency;
+        shakeController.ShakeObject();
+        audioController.ChangeVolume(0.5f);
+        _requester.requesterPlayAudio = 1;
+        StartCoroutine(StopPlayback(shakeController.ObjectShakeDuration));
+    }
+
+    public void SecondObjectShake()
+    {
+        shakeController.ObjectShakeDuration = 2f;
+        shakeController.ObjectShakeFrequency = 30f;
+        _requester.requesterDuration = shakeController.ObjectShakeDuration;
+        _requester.requesterfrequency = shakeController.ObjectShakeFrequency;
+        shakeController.ShakeObject();
+        audioController.ChangeVolume(0.5f);
+        _requester.requesterPlayAudio = 1;
+        StartCoroutine(StopPlayback(shakeController.ObjectShakeDuration));
+    }
+
+    public void ThirdObjectShake()
+    {
+        shakeController.ObjectShakeDuration = 2f;
+        shakeController.ObjectShakeFrequency = 30f;
+        _requester.requesterDuration = shakeController.ObjectShakeDuration;
+        _requester.requesterfrequency = shakeController.ObjectShakeFrequency;
+        shakeController.ShakeObject();
+        audioController.ChangeVolume(0.5f);
+        _requester.requesterPlayAudio = 1;
+        StartCoroutine(StopPlayback(shakeController.ObjectShakeDuration));
     }
 
     //IEnumerator PlayAudio(float duration)
