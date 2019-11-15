@@ -11,6 +11,7 @@ public class PointerHandler : MonoBehaviour
     [SerializeField] Image buttonImg;
     [SerializeField] Timeline timeline;
     [SerializeField] FrequencyGeneratorClient audioFreqGenerator;
+    [SerializeField] Canvas canvas;
     Color initialColor;
 
     void Awake()
@@ -23,7 +24,8 @@ public class PointerHandler : MonoBehaviour
     private void Start()
     {
         timeline.GetComponent<Timeline>();
-        audioFreqGenerator.GetComponent<Timeline>();
+        audioFreqGenerator.GetComponent<FrequencyGeneratorClient>();
+        canvas.GetComponent<Canvas>();
         buttonImg.GetComponent<Image>();
         initialColor = buttonImg.color;
     }
@@ -37,6 +39,7 @@ public class PointerHandler : MonoBehaviour
         buttonImg.color = Color.green;
         timeline.StartTimeline();
         audioFreqGenerator.StartInitalVibration();
+        canvas.enabled = false;
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
