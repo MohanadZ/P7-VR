@@ -30,9 +30,9 @@ public class ScalableHeight : MonoBehaviour
         rightHand.transform.localScale = Vector3.one * scaleFactor;
         leftHand.transform.localScale = Vector3.one * scaleFactor;
 
-        Debug.Log("Scale Factor is " + scaleFactor);
-        Debug.Log("Right Hand is " + rightHand.transform.localScale);
-        Debug.Log("Camera position is " + transform.localScale);
+        //Debug.Log("Scale Factor is " + scaleFactor);
+        //Debug.Log("Right Hand is " + rightHand.transform.localScale);
+        //Debug.Log("Camera position is " + transform.localScale);
     }
 
     //private void PlayerAdjustHeight()
