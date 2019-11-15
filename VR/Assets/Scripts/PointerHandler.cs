@@ -9,6 +9,8 @@ public class PointerHandler : MonoBehaviour
 {
     [SerializeField] SteamVR_LaserPointer laserPointer;
     [SerializeField] Image buttonImg;
+    [SerializeField] Timeline timeline;
+    [SerializeField] FrequencyGeneratorClient audioFreqGenerator;
     Color initialColor;
 
     void Awake()
@@ -20,6 +22,8 @@ public class PointerHandler : MonoBehaviour
 
     private void Start()
     {
+        timeline.GetComponent<Timeline>();
+        audioFreqGenerator.GetComponent<Timeline>();
         buttonImg.GetComponent<Image>();
         initialColor = buttonImg.color;
     }
@@ -31,6 +35,8 @@ public class PointerHandler : MonoBehaviour
             Debug.Log("Button was clicked");
         }
         buttonImg.color = Color.green;
+        timeline.StartTimeline();
+        audioFreqGenerator.StartInitalVibration();
     }
 
     public void PointerInside(object sender, PointerEventArgs e)

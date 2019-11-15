@@ -23,11 +23,8 @@ public class ScalableHeight : MonoBehaviour
         currentHeight = camera.transform.localPosition.y;
         scaleFactor = initialHeight / currentHeight;
 
-        //Debug.Log("Camera Height is " + currentHeight);
-        //Debug.Log("Scale is " + scaleFactor);
-
         transform.localScale = Vector3.one * scaleFactor;
-        rightHand.transform.localScale = Vector3.one * scaleFactor;
+        rightHand.transform.localScale = new Vector3(1, rightHand.transform.localScale.y * scaleFactor, 1);
         leftHand.transform.localScale = Vector3.one * scaleFactor;
 
         //Debug.Log("Scale Factor is " + scaleFactor);
