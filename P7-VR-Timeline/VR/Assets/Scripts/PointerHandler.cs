@@ -35,12 +35,12 @@ public class PointerHandler : MonoBehaviour
         if (e.target.name == "Start Button")
         {
             Debug.Log("Button was clicked");
+            buttonImg.color = Color.green;
+            timeline.StartTimeline();
+            audioFileOpener.StartVibrations();
+            canvas.gameObject.SetActive(false);
+            laserPointer.active = false;
         }
-        buttonImg.color = Color.green;
-        timeline.StartTimeline();
-        audioFileOpener.StartVibrations();
-        canvas.gameObject.SetActive(false);
-        laserPointer.enabled = false;
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
@@ -48,8 +48,8 @@ public class PointerHandler : MonoBehaviour
         if (e.target.name == "Start Button")
         {
             Debug.Log("Button was entered");
+            buttonImg.color = Color.red;
         }
-        buttonImg.color = Color.red;
     }
 
     public void PointerOutside(object sender, PointerEventArgs e)
@@ -57,14 +57,16 @@ public class PointerHandler : MonoBehaviour
         if (e.target.name == "Start Button")
         {
             Debug.Log("Button was exited");
+            buttonImg.color = initialColor;
         }
-        buttonImg.color = initialColor;
     }
 
     private void Update() {
-        // if(Input.GetKeyDown(KeyCode.Space)){
-        //     timeline.StartTimeline();
-        //     canvas.enabled = false;
-        // }
+        if(Input.GetKeyDown(KeyCode.Space)){
+            timeline.StartTimeline();
+            audioFileOpener.StartVibrations();
+            canvas.gameObject.SetActive(false);
+            laserPointer.active = false;
+        }
     }
 }

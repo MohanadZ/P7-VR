@@ -17,6 +17,7 @@ public class Shaker : MonoBehaviour
     [Header("Gameobjects")]
     [SerializeField] ObjectShaker shakeableObject;
     [SerializeField] CameraShaker vrCamera;
+    [SerializeField] RollCan can;
 
     // Start is called before the first frame update
     void Start()
@@ -47,5 +48,7 @@ public class Shaker : MonoBehaviour
     {
         shakeableObject.ShakeObject(duration, maximumAngularShakeObject.x,
             maximumAngularShakeObject.y, maximumAngularShakeObject.z, objectShakeFrequency);
+
+        can.RollTheDamnCan();
     }
 }
