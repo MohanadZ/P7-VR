@@ -1,0 +1,53 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Valve.VR.InteractionSystem;
+
+public class ScalableHeight : MonoBehaviour
+{
+    [SerializeField] float initialHeight = 0.7f;
+    [SerializeField] GameObject rightHand, leftHand;
+    [SerializeField] Camera camera;
+    //[SerializeField] float cameraSpeed = 2.0f;
+
+    float currentHeight, scaleFactor;
+
+    void Update()
+    {
+        AutoAdjustHeight();
+        //PlayerAdjustHeight();
+    }
+
+    private void AutoAdjustHeight()
+    {
+        currentHeight = camera.transform.localPosition.y;
+        scaleFactor = initialHeight / currentHeight;
+
+        transform.localScale = Vector3.one * scaleFactor;
+        //rightHand.transform.localScale = new Vector3(1, rightHand.transform.localScale.y * scaleFactor, 1);
+        //leftHand.transform.localScale = new Vector3(1, leftHand.transform.localScale.y * scaleFactor, 1);
+
+        //Debug.Log("Scale Factor is " + scaleFactor);
+        //Debug.Log("Right Hand is " + rightHand.transform.localScale);
+        //Debug.Log("Camera position is " + transform.localScale);
+    }
+
+    //private void PlayerAdjustHeight()
+    //{
+    //    float height = 0.0f;
+
+    //    //var playerControl = Input.GetAxis("Player Height");
+    //    //print("..... " + playerControl);
+
+    //    if (Input.GetKey(KeyCode.UpArrow))
+    //    {
+    //        height += Vector3.up.y;
+    //    }
+    //    if (Input.GetKey(KeyCode.DownArrow))
+    //    {
+    //        height -= Vector3.up.y;
+    //    }
+
+    //    transform.position += new Vector3(0, height * cameraSpeed * Time.deltaTime, 0);
+    //}
+}
