@@ -7,7 +7,7 @@ using Valve.VR.Extras;
 
 public class PointerHandler : MonoBehaviour
 {
-    [SerializeField] SteamVR_LaserPointer laserPointer;
+    SteamVR_LaserPointer laserPointer;
     [SerializeField] Image buttonImg;
     [SerializeField] Timeline timeline;
     [SerializeField] Canvas canvas;
@@ -16,17 +16,27 @@ public class PointerHandler : MonoBehaviour
 
     void Awake()
     {
-        laserPointer.PointerIn += PointerInside;
-        laserPointer.PointerOut += PointerOutside;
-        laserPointer.PointerClick += PointerClick;
+        canvas.gameObject.SetActive(true);
     }
 
     private void Start()
     {
-        timeline.GetComponent<Timeline>();
-        canvas.GetComponent<Canvas>();
-        buttonImg.GetComponent<Image>();
-        audioFileOpener.GetComponent<AudioFileOpener>();
+        laserPointer = FindObjectOfType<SteamVR_LaserPointer>();
+        // timeline.GetComponent<Timeline>();
+        // canvas.GetComponent<Canvas>();
+        // buttonImg.GetComponent<Image>();
+        // audioFileOpener.GetComponent<AudioFileOpener>();
+
+        timeline = FindObjectOfType<Timeline>();
+        canvas = FindObjectOfType<Canvas>();
+        buttonImg = FindObjectOfType<Image>();
+        audioFileOpener = FindObjectOfType<AudioFileOpener>();
+
+        laserPointer.PointerIn += PointerInside;
+        laserPointer.PointerOut += PointerOutside;
+        laserPointer.PointerClick += PointerClick;
+
+        laserPointer.active = true;
         initialColor = buttonImg.color;
     }
 
@@ -34,20 +44,22 @@ public class PointerHandler : MonoBehaviour
     {
         if (e.target.name == "Start Button")
         {
-            Debug.Log("Button was clicked");
+            //Debug.Log("Button was clicked");
             buttonImg.color = Color.green;
             timeline.StartTimeline();
             audioFileOpener.StartVibrations();
             canvas.gameObject.SetActive(false);
             laserPointer.active = false;
         }
+
+        //Debug.Log("laser is " + laserPointer.active);
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
     {
         if (e.target.name == "Start Button")
         {
-            Debug.Log("Button was entered");
+            //Debug.Log("Button was entered");
             buttonImg.color = Color.red;
         }
     }
@@ -56,7 +68,7 @@ public class PointerHandler : MonoBehaviour
     {
         if (e.target.name == "Start Button")
         {
-            Debug.Log("Button was exited");
+            //Debug.Log("Button was exited");
             buttonImg.color = initialColor;
         }
     }

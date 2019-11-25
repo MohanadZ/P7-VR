@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR.InteractionSystem;
 
 public class ResetScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] Player player;
+
+    private void Awake() {
+        int numOfPassenger = FindObjectsOfType<Player>().Length;
+
+        if(numOfPassenger < 1){
+            Instantiate(player, player.transform.position, player.transform.rotation);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1)){

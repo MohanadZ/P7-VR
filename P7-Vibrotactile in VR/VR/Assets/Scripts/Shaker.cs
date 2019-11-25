@@ -16,12 +16,14 @@ public class Shaker : MonoBehaviour
 
     [Header("Gameobjects")]
     [SerializeField] ObjectShaker shakeableObject;
-    [SerializeField] CameraShaker vrCamera;
+    CameraShaker vrCamera;
     [SerializeField] RollCan can;
 
     // Start is called before the first frame update
     void Start()
     {
+        vrCamera = FindObjectOfType<CameraShaker>();
+
         shakeableObject.GetComponent<ObjectShaker>();
         vrCamera.GetComponent<CameraShaker>();
     }
