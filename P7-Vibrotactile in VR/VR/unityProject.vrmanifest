@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\P7-VR-Timeline\\VR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\Darklab\\Documents\\GitHub\\P7-VR\\P7-Vibrotactile in VR\\VR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "VR [Testing]"

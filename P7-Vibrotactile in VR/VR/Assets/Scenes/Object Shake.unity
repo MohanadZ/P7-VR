@@ -1445,11 +1445,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8933452421059851984, guid: 1654ec4415f3e0f488f9486003cb23ee,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8933452421060289280, guid: 1654ec4415f3e0f488f9486003cb23ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1504,6 +1499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8933452421059851984, guid: 1654ec4415f3e0f488f9486003cb23ee,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8933452420970762527, guid: 1654ec4415f3e0f488f9486003cb23ee,
         type: 3}
@@ -1723,6 +1723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Reset Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309412458810259380, guid: 794ccacc8c61b32408968da54fb0029b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2309412458810259386, guid: 794ccacc8c61b32408968da54fb0029b,
         type: 3}
