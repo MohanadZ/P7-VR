@@ -46,8 +46,8 @@ public class PointerHandler : MonoBehaviour
         {
             //Debug.Log("Button was clicked");
             buttonImg.color = Color.green;
-            timeline.StartTimeline();
             audioFileOpener.StartVibrations();
+            timeline.StartTimeline();
             canvas.gameObject.SetActive(false);
             laserPointer.active = false;
 

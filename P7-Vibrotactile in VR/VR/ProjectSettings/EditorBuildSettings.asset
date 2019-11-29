@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Baseline Condition.unity
     guid: 9c8611269cb650740a38465e836a12f4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Camera Shake.unity
     guid: 07f7e2d7c8428f246a84bb12f2678bc7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Object Shake.unity
     guid: 40b91a6d205162c42a5eae0da0210ad3
   - enabled: 1
