@@ -10,7 +10,6 @@ public class AudioFileOpener : MonoBehaviour
     ProcessStartInfo vlc;
     Shaker shaker;
 
-    // Start is called before the first frame update
     void Start()
     {
         vlc = new ProcessStartInfo();
@@ -18,13 +17,6 @@ public class AudioFileOpener : MonoBehaviour
 
         shaker = GetComponent<Shaker>();
         audioController.GetComponent<AudioController>();
-
-        //SpikeTurbulence();
-    }
-
-    private void Update()
-    {
-        //testFunc();
     }
 
     public void StartVibrations()
@@ -32,10 +24,4 @@ public class AudioFileOpener : MonoBehaviour
         vlc.Arguments = "D:\\P7-VR-Timeline\\VR\\Assets\\Audio\\TurbulenceNoise.wav";
         Process.Start(vlc);
     }
-
-    // public void testFunc(){
-    //     if(Input.GetKeyDown(KeyCode.Return)){
-    //         SpikeTurbulenceCamera();
-    //     }
-    // }
 }

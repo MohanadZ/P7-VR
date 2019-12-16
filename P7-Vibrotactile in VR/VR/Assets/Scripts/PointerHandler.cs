@@ -31,7 +31,11 @@ public class PointerHandler : MonoBehaviour
         buttonImg.GetComponent<Image>();
         audioFileOpener.GetComponent<AudioFileOpener>();
         initialColor = buttonImg.color;
+        ObjectsStartingTransform();
+    }
 
+    private void ObjectsStartingTransform()
+    {
         initialCanPosition = can.transform.localPosition;
         initialCanRotation = can.transform.localRotation;
         initialBowlPosition = bowl.transform.localPosition;
@@ -50,16 +54,20 @@ public class PointerHandler : MonoBehaviour
             timeline.StartTimeline();
             canvas.gameObject.SetActive(false);
             laserPointer.active = false;
-
-            can.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            StartCoroutine(UnFreezeCan());
-            can.transform.localRotation = initialCanRotation;
-            can.transform.localPosition = initialCanPosition;
-            phone.transform.localRotation = initialPhoneRotation;
-            phone.transform.localPosition = initialPhonePosition;
-            bowl.transform.localRotation = initialBowlRotation;
-            bowl.transform.localPosition = initialBowlPosition;
+            ResetObjectsTransform();
         }
+    }
+
+    private void ResetObjectsTransform()
+    {
+        can.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        StartCoroutine(UnFreezeCan());
+        can.transform.localRotation = initialCanRotation;
+        can.transform.localPosition = initialCanPosition;
+        phone.transform.localRotation = initialPhoneRotation;
+        phone.transform.localPosition = initialPhonePosition;
+        bowl.transform.localRotation = initialBowlRotation;
+        bowl.transform.localPosition = initialBowlPosition;
     }
 
     IEnumerator UnFreezeCan(){
@@ -83,14 +91,5 @@ public class PointerHandler : MonoBehaviour
             //Debug.Log("Button was exited");
             buttonImg.color = initialColor;
         }
-    }
-
-    private void Update() {
-        // if(Input.GetKeyDown(KeyCode.Space)){
-        //     timeline.StartTimeline();
-        //     audioFileOpener.StartVibrations();
-        //     canvas.gameObject.SetActive(false);
-        //     laserPointer.active = false;
-        // }
     }
 }
